@@ -2,8 +2,7 @@ package de.telran.blog.dto;
 
 import de.telran.blog.entity.PostEntity;
 import lombok.*;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 public class PostDto {
@@ -21,6 +20,6 @@ public class PostDto {
     private Long id;
     private String title;
     private String body;
-    private Date date;
+    private LocalDate date;
     private Long authorId;
 }
