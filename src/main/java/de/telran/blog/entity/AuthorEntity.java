@@ -2,16 +2,23 @@ package de.telran.blog.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
+@Entity
+@Table(name="AUTHOR")
 public class AuthorEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name="First_Name", nullable = false)
     private String firstName;
+    @Column(name = "Last_Name", nullable = false)
     private String lastName;
+
+    @OneToMany(targetEntity = PostEntity.class)
+    private List<PostEntity> postEntity=new ArrayList<>();
+
 }

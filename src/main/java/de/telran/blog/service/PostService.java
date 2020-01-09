@@ -24,7 +24,7 @@ public class PostService {
         PostEntity postEntity = new PostEntity();
         postEntity.setTitle(postDto.getTitle());
         postEntity.setBody(postDto.getBody());
-        postEntity.setDate(postDto.getDate());
+        postEntity.setLocalDate(postDto.getLocalDate());
         postEntity.setAuthorEntity(authorRepository.getOne(1L)); // TODO just for cresting first post
         return postRepository.save(postEntity).getId();
     }

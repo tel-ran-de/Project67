@@ -3,17 +3,20 @@ package de.telran.blog.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 @Entity
 public class PostEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String body;
-    private Date date;
+    @Column(name="LOCAL_DATE", columnDefinition = "DATE")
+    private LocalDate localDate;
     @ManyToOne(targetEntity = AuthorEntity.class)
+    @JoinColumn(name="AUTHOR_ID")
     private AuthorEntity authorEntity;
 }
