@@ -6,8 +6,11 @@ import de.telran.blog.repository.AuthorRepository;
 import de.telran.blog.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class PostService {
@@ -30,7 +33,9 @@ public class PostService {
     }
 
     public List<PostDto> getAllPosts() {
-        return postRepository.findAll()
+        List<PostEntity> result = new ArrayList<>();
+        postRepository.findAll().forEach(result::add);
+        return result
                 .stream()
                 .map(PostDto::new)
                 .collect(Collectors.toList());

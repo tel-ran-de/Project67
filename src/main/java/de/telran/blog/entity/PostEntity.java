@@ -7,6 +7,7 @@ import java.util.Date;
 
 @Data
 @Entity
+@Table(name = "post_entity")
 public class PostEntity {
     @Id
     @GeneratedValue
