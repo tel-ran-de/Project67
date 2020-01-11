@@ -11,13 +11,13 @@ import java.time.LocalDate;
 public class PostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JoinColumn(name = "id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
-    @JoinColumn(name = "title", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
-    @JoinColumn(name = "body", nullable = false)
+    @Column(name = "body", nullable = false)
     private String body;
-    @JoinColumn(name = "date", nullable = false)
+    @Column(name = "date", nullable = false)
     private LocalDate date;
     @JoinColumn(name = "author_entity_id", nullable = false)
     @ManyToOne(targetEntity = AuthorEntity.class)

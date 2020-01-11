@@ -10,10 +10,10 @@ import javax.persistence.*;
 public class AuthorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JoinColumn(name = "id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
-    @JoinColumn(name = "first_Name", nullable = false)
+    @Column(name = "first_Name", nullable = false)
     private String firstName;
-    @JoinColumn(name = "last_Name", nullable = false)
+    @Column(name = "last_Name", nullable = false)
     private String lastName;
 }
