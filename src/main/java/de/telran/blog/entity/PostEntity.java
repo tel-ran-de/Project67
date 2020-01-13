@@ -7,14 +7,14 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "post_entity")
 public class PostEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String body;
     private Date date;
+
     @ManyToOne(targetEntity = AuthorEntity.class)
     private AuthorEntity authorEntity;
 }
