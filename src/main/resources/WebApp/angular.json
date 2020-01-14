@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -97,6 +98,7 @@
               "src/assets/scss"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
@@ -105,7 +107,6 @@
               "my-blog/node_modules/karma-jasmine/node_modules/bootstrap/dist/js/bootstrap.bundle.js",
               "my-blog/node_modules/karma-jasmine/node_modules/bootstrap/dist/js/bootstrap.js",
               "my-blog/node_modules/karma-jasmine/node_modules/jquery/dist/jquery.js"
-
             ]
           }
         },
@@ -135,6 +136,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "my-blog"
 }

@@ -42,8 +42,8 @@ public class PostRestController {
     public Page<PostDto> loadPostsPage(
             @PageableDefault(page = 0, size = 5)
             @SortDefault.SortDefaults({
-                    @SortDefault(sort = "title", direction = Sort.Direction.DESC),
-                    @SortDefault(sort = "id", direction = Sort.Direction.ASC)
+                    @SortDefault(sort = "id", direction = Sort.Direction.ASC),
+                    @SortDefault(sort = "title", direction = Sort.Direction.DESC)
             })
                     Pageable pageable) {
         return postService.findAllPage(pageable);
