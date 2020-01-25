@@ -13,9 +13,10 @@ RUN apt-get -y install nodejs
 COPY --chown=gradle:gradle . /home/gradle
 WORKDIR /home/gradle/src/main/resources/WebApp
 RUN npm install
-# RUN npm root -g
-#  /usr/lib/node_modules
+
 WORKDIR /home/gradle
+RUN cd node && curl -O http://nodejs.org/dist/v12.14.0/node-v12.14.0-linux-x64.tar.gz
+RUN tar -xvf /home/gradle/node/node-v12.14.0-linux-x64.tar.gz
 RUN gradle assemble
 
 
