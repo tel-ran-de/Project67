@@ -6,7 +6,7 @@ COPY --chown=gradle:gradle ./src /home/gradle/src/
 COPY --chown=gradle:gradle ./build.gradle /home/gradle/
 COPY --chown=gradle:gradle ./settings.gradle /home/gradle/
 WORKDIR /home/gradle
-RUN gradle assemble --stacktrace --scanon
+RUN gradle assemble --stacktrace --scan
 
 #
 # Package stage
