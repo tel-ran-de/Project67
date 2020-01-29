@@ -2,7 +2,7 @@ package de.telran.blog.dto;
 
 import de.telran.blog.entity.TagsEntity;
 import lombok.Data;
-import springfox.documentation.service.Tags;
+
 
 @Data
 public class TagsDto {
@@ -10,6 +10,10 @@ public class TagsDto {
     Long id;
     String text;
     String description;
+
+    public TagsDto(){
+
+    }
 
     public TagsDto(TagsEntity tagsEntity){
         this.id = tagsEntity.getId();
