@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@Controller
-@RequestMapping("/fileupload")
+@RestController
+@RequestMapping("/api")
 public class FileUploadController {
 
     private StorageService storageService;
@@ -20,16 +20,17 @@ public class FileUploadController {
 
     @RequestMapping(value = "/file", method = RequestMethod.POST,
             consumes = {"multipart/form-data"})
-    public ResponseEntity<Object> upload(@RequestParam("file") MultipartFile file) {
-
+    public void upload(@RequestParam("file") MultipartFile file) {
         storageService.uploadFile(file);
-
-        return new ResponseEntity<>("File is uploaded successfully", HttpStatus.OK);
     }
 
     @ExceptionHandler(StorageException.class)
     public ResponseEntity<Object> handleStorageFileNotFound(StorageException e) {
-
         return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Object> unknownException(Exception e) {
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
