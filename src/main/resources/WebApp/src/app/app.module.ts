@@ -21,6 +21,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PaginatorComponent } from './component/paginator/paginator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LanguageSwitcherComponent } from './component/language-switcher/language-switcher.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,7 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     EditPostComponent,
     EditAuthorComponent,
     ValidationErrorsComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,
