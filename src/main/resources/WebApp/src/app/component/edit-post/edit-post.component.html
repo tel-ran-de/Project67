@@ -3,13 +3,13 @@
       <div class="card-body">
         <form [formGroup]="postForm">
           <div class="form-row">
-            <div class="name"><h2>Title</h2></div>
+            <div class="name"><h2 [translate]="'title'">Title</h2></div>
             <div class="value">
               <input class="input--style-6" style="width: 592px" type="text" placeholder="Post Title" formControlName="title">
             </div>
           </div>
           <div class="form-row">
-            <div class="name"><h2>Body</h2></div>
+            <div class="name"><h2 [translate]="'body'">Body</h2></div>
             <div class="value">
               <div class="input-group">
                 <textarea class="textarea--style-6 date-picker" placeholder="Post Body" formControlName="body"></textarea>
@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="name"><h2>Date</h2></div>
+            <div class="name"><h2 [translate]="'date'">Date</h2></div>
             <div class="value">
               <div class="input-group js-input-file">
                 <input type="date" formControlName="date">
@@ -26,5 +26,5 @@
           </div>
         </form>
       </div>
-        <button class="btn btn-primary btn--radius" type="submit" (click)="onSubmit($event)">Submit</button>
+        <button class="btn btn-primary btn--radius" [translate]="'submit'" type="submit" (click)="onSubmit($event)">Submit</button>
 </div>
