@@ -2,7 +2,6 @@ package de.telran.blog.controller;
 
 import de.telran.blog.dto.PostDto;
 import de.telran.blog.exception.RegexException;
-import de.telran.blog.service.PostService;
 import de.telran.blog.entity.PostEntity;
 import de.telran.blog.service.IAuthorService;
 import de.telran.blog.service.IPostService;
@@ -40,7 +39,7 @@ public class PostController {
     public Page<PostDto> loadPostsPage(
             @PageableDefault(page = 0, size = 5)
             @SortDefault.SortDefaults({
-                    @SortDefault(sort = "id", direction = Sort.Direction.ASC),
+                    @SortDefault(sort = "id", direction = Sort.Direction.DESC),
                     @SortDefault(sort = "title", direction = Sort.Direction.DESC)
             })
                     Pageable pageable) {
