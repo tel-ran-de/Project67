@@ -19,3 +19,8 @@ insert into post (body, date, title, author_id) values ('body_2', '2020-01-09', 
 insert into post (body, date, title, author_id) values ('body_3', '2020-01-09', 'title3', 1);
 insert into post (body, date, title, author_id) values ('body_4', '2020-01-09', 'title4', 1);
 insert into post (body, date, title, author_id) values ('body_5', '2020-01-09', 'title5', 1);
+
+insert into user (name, password, active, roles) values ('user1', 'password1', true, 'ADMIN');
+insert into user (name, password, active, roles) values ('user2', 'password2', true, 'ADMIN');
+insert into user (name, password, active, roles) values ('user3', 'password3', true, 'USER');
+
